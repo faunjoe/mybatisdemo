@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties"/>
+	
+	<!-- 配置实体类的别名 -->
+	<typeAliases>
+		<typeAlias type="com.faunjoe.mybatis.bean.User" alias="User"/> 
+		<typeAlias type="com.faunjoe.mybatis.bean.Order" alias="Order"/> 
+		<typeAlias type="com.faunjoe.mybatis.bean.Teacher" alias="Teacher"/> 
+		<typeAlias type="com.faunjoe.mybatis.bean.Classes" alias="Classes"/> 
+		<typeAlias type="com.faunjoe.mybatis.bean.Student" alias="Student"/>
+		<typeAlias type="com.faunjoe.mybatis.bean.ConditionUser" alias="ConditionUser"/>
+		<typeAlias type="com.faunjoe.mybatis.bean.PUser" alias="PUser"/>
+		<typeAlias type="com.faunjoe.mybatis.bean.CUser" alias="CUser"/>
+		<!-- <package name="com.faunjoe.mybatis.bean"/>-->
+	</typeAliases>
+	<!-- 
+		development : 开发模式
+		work : 工作模式
+ 	-->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${name}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="com/faunjoe/mybatis/demo/userMapper.xml"/>
+		<mapper resource="com/faunjoe/mybatis/demo1/userMapper.xml"/>
+		<mapper class="com.faunjoe.mybatis.demo2.UserMapper"/>
+		<mapper resource="com/faunjoe/mybatis/demo3/orderMapper.xml"/>
+		<mapper resource="com/faunjoe/mybatis/demo4/ClassMapper.xml"/>
+		<mapper resource="com/faunjoe/mybatis/demo5/ClassMapper.xml"/>
+		<mapper resource="com/faunjoe/mybatis/demo6/userMapper.xml"/>
+		<mapper resource="com/faunjoe/mybatis/demo7/userMapper.xml"/>
+		<mapper resource="com/faunjoe/mybatis/demo8/userMapper.xml"/>
+	</mappers>
+</configuration>
